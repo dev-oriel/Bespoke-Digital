@@ -11,7 +11,6 @@ export default function Landing() {
       <div className="absolute inset-0 grid-bg pointer-events-none opacity-40"></div>
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] hero-glow rounded-full pointer-events-none"></div>
 
-      <Navbar />
 
       <main>
         <Hero />
@@ -49,7 +48,6 @@ export default function Landing() {
         </section>
       </main>
 
-      <Footer />
     </div>
   );
 }
