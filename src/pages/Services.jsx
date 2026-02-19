@@ -58,10 +58,10 @@ export default function Services() {
     <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 relative z-10">
       {/* Header */}
       <div className="max-w-3xl mb-20">
-        <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-white mb-6">
+        <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-gray-700 mb-6">
           What We <span className="text-primary">Build.</span>
         </h1>
-        <p className="text-slate-300 text-xl max-w-2xl leading-relaxed">
+        <p className="text-gray-500 text-xl max-w-2xl leading-relaxed">
           From first line of code to long-term digital dominance. We build
           products that scale as fast as your ambition.
         </p>

@@ -18,13 +18,13 @@ export default function ServiceBlock({ icon, title, quote, features, isWide }) {
         "{quote}"
       </p>
 
-      <ul className="space-y-3 flex-grow">
+      <ul className="space-y-3 grow">
         {features.map((f, i) => (
           <li key={i} className="flex items-start gap-3">
             <span className="material-symbols-outlined text-primary text-lg">
               check_circle
             </span>
-            <span className="text-slate-200 text-sm font-medium">{f}</span>
+            <span className="text-gray-500 text-sm font-medium">{f}</span>
           </li>
         ))}
       </ul>
