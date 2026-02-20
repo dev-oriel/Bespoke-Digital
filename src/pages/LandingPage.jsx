@@ -30,7 +30,7 @@ export default function LandingPage() {
               Secure your spot in our production cycle today.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button className="w-full sm:w-auto bg-primary text-white text-xl font-bold px-12 py-5 rounded-full shadow-[0_20px_40px_rgba(60,131,246,0.3)] hover:translate-y-[-2px] transition-all">
+              <button className="w-full sm:w-auto bg-primary text-white text-xl font-bold px-12 py-5 rounded-full shadow-[0_20px_40px_rgba(60,131,246,0.3)] hover:-translate-y-0.5 transition-all">
                 Launch Project
               </button>
               <a

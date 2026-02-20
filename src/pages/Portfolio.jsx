@@ -62,7 +62,7 @@ export default function Portfolio() {
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <div className="p-6 md:p-8 flex flex-col flex-grow">
+            <div className="p-6 md:p-8 flex flex-col grow">
               <div className="flex flex-col sm:flex-row justify-between items-start gap-3 sm:gap-0 mb-4">
                 <div>
                   <span className="text-primary text-xs font-bold uppercase tracking-widest block mb-1">
