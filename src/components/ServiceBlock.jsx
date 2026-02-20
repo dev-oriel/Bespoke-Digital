@@ -1,30 +1,26 @@
 export default function ServiceBlock({ icon, title, quote, features, isWide }) {
   return (
     <div
-      className={`glass-card  glow-hover p-8 rounded-xl flex flex-col gap-6 ${isWide ? "md:col-span-2 lg:col-span-1" : ""}`}
+      className={`glass-card rounded-xl p-8 flex flex-col gap-6 glow-hover transition-all ${isWide ? "md:col-span-2 lg:col-span-1" : ""}`}
     >
-      <div className="flex   items-center gap-4">
-        <div className="size-14 rounded-xl bg-primry/20 flex items-center justify-center border border-primary/30">
-          <span className="material-symbols-outlined text-primary text-3xl">
-            {icon}
-          </span>
-        </div>
-        <h3 className="text-xl font-bold text-white uppercase tracking-tight">
+      <div className="text-primary flex items-center gap-3">
+        <span className="material-symbols-outlined text-4xl">{icon}</span>
+        <h3 className="text-xl font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100">
           {title}
         </h3>
       </div>
-
-      <p className="text-primary text-sm font-semibold italic pl-4 border-l-2 border-primary/50">
+      <p className="text-slate-600 dark:text-slate-400 text-sm italic">
         "{quote}"
       </p>
-
-      <ul className="space-y-3 grow">
-        {features.map((f, i) => (
-          <li key={i} className="flex items-start gap-3">
-            <span className="material-symbols-outlined text-primary text-lg">
+      <ul className="space-y-4 flex-grow">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-start gap-3">
+            <span className="material-symbols-outlined text-primary text-xl">
               check_circle
             </span>
-            <span className="text-gray-500 text-sm font-medium">{f}</span>
+            <span className="text-slate-700 dark:text-slate-300">
+              {feature}
+            </span>
           </li>
         ))}
       </ul>
