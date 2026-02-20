@@ -38,9 +38,12 @@ export default function Navbar() {
           <button className="hidden sm:block text-sm font-semibold px-6 py-2 rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
             Log In
           </button>
-          <button className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-[0_0_15px_rgba(60,131,246,0.3)] hover:scale-105 transition-all">
+          <Link
+            to="/start"
+            className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-[0_0_15px_rgba(60,131,246,0.3)] hover:scale-105 transition-all"
+          >
             Start Your Project
-          </button>
+          </Link>
         </div>
       </div>
     </header>
