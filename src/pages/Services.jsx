@@ -58,27 +58,27 @@ export default function Services() {
     <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 relative z-10">
       {/* Header */}
       <div className="max-w-3xl mb-20">
-        <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-gray-700 mb-6">
+        <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-slate-900 dark:text-white mb-6">
           What We <span className="text-primary">Build.</span>
         </h1>
-        <p className="text-gray-500 text-xl max-w-2xl leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-400 text-xl max-w-2xl leading-relaxed">
           From first line of code to long-term digital dominance. We build
           products that scale as fast as your ambition.
         </p>
       </div>
 
       {/* Services Grid */}
-      <div className="grid   grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
         {services.map((s, i) => (
           <ServiceBlock key={i} {...s} isWide={i === 4} />
         ))}
 
         {/* Custom Engineer CTA Card */}
-        <div className="border-2 border-dashed  border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center gap-4 group cursor-pointer hover:border-primary/50 transition-all">
-          <span className="material-symbols-outlined text-5xl text-slate-500 group-hover:text-primary transition-colors">
+        <div className="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-8 flex flex-col items-center justify-center text-center gap-4 group cursor-pointer hover:border-primary/50 transition-all">
+          <span className="material-symbols-outlined text-5xl text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">
             add_circle
           </span>
-          <p className="text-slate-300 font-medium">
+          <p className="text-slate-600 dark:text-slate-300 font-medium">
             Need something more specific?
           </p>
           <button className="text-primary font-bold text-sm underline underline-offset-8">
@@ -87,7 +87,7 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Special Offer - High Contrast Amber with Dark Text */}
+      {/* Special Offer - Hardcoded Dark Text on Amber Background */}
       <div className="mb-32">
         <div className="bg-accent-amber rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_0_30px_rgba(245,158,11,0.2)]">
           <div className="flex items-center gap-6">
@@ -116,8 +116,10 @@ export default function Services() {
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Direct Build */}
         <div className="glass-card p-12 rounded-xl flex flex-col">
-          <h3 className="text-3xl font-black text-white mb-4">Direct Build</h3>
-          <p className="text-slate-400 mb-10">
+          <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-4">
+            Direct Build
+          </h3>
+          <p className="text-slate-600 dark:text-slate-400 mb-10">
             Fixed-cost engagement for high-ownership projects.
           </p>
           <div className="space-y-8 mb-12">
@@ -131,8 +133,12 @@ export default function Services() {
                   0{i + 1}
                 </span>
                 <div>
-                  <h5 className="font-bold text-white text-lg">{item.t}</h5>
-                  <p className="text-slate-400 text-sm">{item.d}</p>
+                  <h5 className="font-bold text-slate-900 dark:text-white text-lg">
+                    {item.t}
+                  </h5>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    {item.d}
+                  </p>
                 </div>
               </div>
             ))}
@@ -147,8 +153,10 @@ export default function Services() {
           <div className="absolute top-6 right-6 bg-primary text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
             Partner Model
           </div>
-          <h3 className="text-3xl font-black text-white mb-4">Commission</h3>
-          <p className="text-slate-400 mb-10">
+          <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-4">
+            Commission
+          </h3>
+          <p className="text-slate-600 dark:text-slate-400 mb-10">
             Lower entry costs with long-term shared success.
           </p>
           <div className="space-y-8 mb-12">
@@ -174,13 +182,17 @@ export default function Services() {
                   {item.i}
                 </span>
                 <div>
-                  <h5 className="font-bold text-white text-lg">{item.t}</h5>
-                  <p className="text-slate-400 text-sm">{item.d}</p>
+                  <h5 className="font-bold text-slate-900 dark:text-white text-lg">
+                    {item.t}
+                  </h5>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    {item.d}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
-          <button className="mt-auto bg-white text-slate-900 py-4 rounded-full font-bold hover:bg-slate-200 transition-colors">
+          <button className="mt-auto bg-slate-900 text-white dark:bg-white dark:text-slate-900 py-4 rounded-full font-bold hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors">
             Apply for Partnership
           </button>
         </div>
