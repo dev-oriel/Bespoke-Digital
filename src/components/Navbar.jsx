@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const menuRef = useRef(null);
 
-  // Streamlined links for the top nav
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Work", path: "/portfolio" },
@@ -13,10 +13,27 @@ export default function Navbar() {
     { name: "Process", path: "/process" },
   ];
 
+  // Close when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 relative z-20">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
+        <Link to="/" className="flex items-center gap-3">
           <div className="size-10 bg-primary flex items-center justify-center rounded-xl shadow-[0_0_20px_rgba(60,131,246,0.4)]">
             <span className="material-symbols-outlined text-white">
               deployed_code
@@ -45,7 +62,7 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex">
           <Link
             to="/start"
             className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-[0_0_15px_rgba(60,131,246,0.3)] hover:scale-105 transition-all"
@@ -54,48 +71,60 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Hamburger */}
         <button
-          className="lg:hidden relative z-20 text-slate-900 dark:text-white p-2"
+          className="lg:hidden text-slate-900 dark:text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="material-symbols-outlined text-3xl">
             {isMenuOpen ? "close" : "menu"}
           </span>
         </button>
-      </div>
 
-      {/* Mobile Menu Dropdown */}
-      <div
-        className={`fixed inset-0 bg-background-light dark:bg-background-dark z-10 lg:hidden flex flex-col items-center justify-center transition-all duration-300 ${
-          isMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
-      >
-        <nav className="flex flex-col items-center gap-8 text-2xl font-black mb-12">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              onClick={() => setIsMenuOpen(false)}
-              className={`${
-                location.pathname === link.path
-                  ? "text-primary"
-                  : "text-slate-900 dark:text-white"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-        <Link
-          to="/start"
-          onClick={() => setIsMenuOpen(false)}
-          className="bg-primary text-white text-xl font-bold px-10 py-4 rounded-full shadow-[0_0_20px_rgba(60,131,246,0.4)]"
+        {/* Mobile Card Menu */}
+        <div
+          className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         >
-          Start Your Project
-        </Link>
+          {/* Background overlay */}
+          <div className="absolute inset-0"></div>
+
+          {/* Sliding card */}
+          <div
+            ref={menuRef}
+            className={`absolute top-20 right-4 w-[85%] max-w-sm bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-6 transition-transform duration-300 ${
+              isMenuOpen ? "translate-x-0" : "translate-x-10"
+            }`}
+          >
+            <nav className="flex flex-col gap-5">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`text-base font-bold transition-colors ${
+                    location.pathname === link.path
+                      ? "text-primary"
+                      : "text-slate-800 dark:text-slate-200"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+              <Link
+                to="/start"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-center bg-primary text-white font-bold py-3 rounded-full shadow-[0_0_15px_rgba(60,131,246,0.3)]"
+              >
+                Start Your Project
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
   );
