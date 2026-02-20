@@ -23,29 +23,32 @@ export default function FAQ() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-20 relative z-10">
-      <div className="text-center mb-16">
-        <h1 className="text-5xl font-black mb-6 tracking-tight text-slate-900 dark:text-white">
-          Frequently Asked <span className="text-primary">Questions</span>
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 md:py-20 relative z-10">
+      <div className="text-center mb-12 md:mb-16">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4 md:mb-6 tracking-tight text-slate-900 dark:text-white">
+          Frequently Asked{" "}
+          <span className="text-primary block sm:inline mt-2 sm:mt-0">
+            Questions
+          </span>
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 text-lg">
+        <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg">
           Clear answers. Zero corporate speak.
         </p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-4 md:space-y-6">
         {faqs.map((faq, i) => (
           <div
             key={i}
-            className="glass-card p-8 rounded-2xl hover:border-primary/40 transition-colors"
+            className="glass-card p-6 md:p-8 rounded-2xl hover:border-primary/40 transition-colors"
           >
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-start gap-3">
-              <span className="text-primary material-symbols-outlined shrink-0">
+            <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-3 md:mb-4 flex items-start gap-3">
+              <span className="text-primary material-symbols-outlined shrink-0 mt-0.5 md:mt-0">
                 help
               </span>
               {faq.q}
             </h3>
-            <p className="text-slate-600 dark:text-slate-300 pl-9 leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 pl-9 text-sm md:text-base leading-relaxed">
               {faq.a}
             </p>
           </div>
