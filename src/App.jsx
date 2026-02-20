@@ -9,13 +9,14 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy"; // Added import
+import Terms from "./pages/Terms"; // Added import
 
 function App() {
   return (
     <Router>
-      <ScrollToTop /> {/* Needs to be inside Router, but outside Routes */}
+      <ScrollToTop />
       <Layout>
-        {/* Added the page-transition class here for a smooth fade-in */}
         <div className="page-transition">
           <Routes>
             <Route path="/" element={<LandingPage />} />
@@ -26,6 +27,8 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} /> {/* Added Route */}
+            <Route path="/terms" element={<Terms />} /> {/* Added Route */}
           </Routes>
         </div>
       </Layout>

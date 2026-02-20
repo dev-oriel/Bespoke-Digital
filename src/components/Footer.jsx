@@ -109,10 +109,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
         <p>© 2026 Bespoke Digital Assets. All rights reserved.</p>
         <div className="flex gap-8">
-          <Link to="/faq" className="hover:text-primary transition-all">
+          <Link to="/privacy" className="hover:text-primary transition-all">
             Privacy Policy
           </Link>
-          <Link to="/faq" className="hover:text-primary transition-all">
+          <Link to="/terms" className="hover:text-primary transition-all">
             Terms of Service
           </Link>
         </div>
