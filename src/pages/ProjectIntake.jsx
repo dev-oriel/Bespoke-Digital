@@ -136,7 +136,7 @@ export default function ProjectIntake() {
                 <label className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
                   Logo & Assets
                 </label>
-                <div className="h-full min-h-[120px] bg-slate-50 dark:bg-slate-900/50 rounded-xl flex flex-col items-center justify-center gap-3 hover:border-primary transition-all cursor-pointer group border-dashed border-2 border-slate-300 dark:border-slate-700 py-6">
+                <div className="h-full min-h-30 bg-slate-50 dark:bg-slate-900/50 rounded-xl flex flex-col items-center justify-center gap-3 hover:border-primary transition-all cursor-pointer group border-dashed border-2 border-slate-300 dark:border-slate-700 py-6">
                   <div className="size-12 rounded-full bg-slate-200 dark:bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-all text-slate-500 dark:text-slate-400 group-hover:text-primary">
                     <span className="material-symbols-outlined text-2xl">
                       upload_file
@@ -230,7 +230,7 @@ export default function ProjectIntake() {
                   Main Competitors
                 </label>
                 <textarea
-                  className="w-full h-full min-h-[160px] bg-white dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-5 py-4 text-slate-900 dark:text-white outline-none transition-all placeholder-slate-400 dark:placeholder-slate-600 resize-none"
+                  className="w-full h-full min-h-40 bg-white dark:bg-slate-900/50 border border-slate-300 dark:border-slate-700 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-5 py-4 text-slate-900 dark:text-white outline-none transition-all placeholder-slate-400 dark:placeholder-slate-600 resize-none"
                   placeholder="Who should we look out for? (List 2-3 brands)"
                 ></textarea>
               </div>
@@ -342,7 +342,7 @@ export default function ProjectIntake() {
         {/* Final Submit Area */}
         <div className="pt-8 pb-12 flex flex-col items-center gap-6">
           <button
-            className="w-full md:w-auto min-w-[400px] bg-primary text-white text-xl font-black py-6 px-12 rounded-full shadow-[0_0_30px_rgba(60,131,246,0.4)] hover:-translate-y-1 transition-all tracking-wide"
+            className="w-full md:w-auto min-w-100 bg-primary text-white text-xl font-black py-6 px-12 rounded-full shadow-[0_0_30px_rgba(60,131,246,0.4)] hover:-translate-y-1 transition-all tracking-wide"
             type="submit"
           >
             Submit Discovery Board

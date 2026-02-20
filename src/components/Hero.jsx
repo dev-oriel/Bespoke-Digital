@@ -20,7 +20,7 @@ export default function Hero() {
             your balance sheet.
           </p>
           <div className="flex flex-wrap gap-4">
-            <button className="bg-primary text-white text-lg font-bold px-8 py-4 rounded-full shadow-[0_0_30px_rgba(60,131,246,0.4)] hover:translate-y-[-2px] transition-all">
+            <button className="bg-primary text-white text-lg font-bold px-8 py-4 rounded-full shadow-[0_0_30px_rgba(60,131,246,0.4)] hover:-translate-y-0.5 transition-all">
               Start Your Project
             </button>
             <button className="px-8 py-4 text-lg font-bold rounded-full border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-800 transition-all">

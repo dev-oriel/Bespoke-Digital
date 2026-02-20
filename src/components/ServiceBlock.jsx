@@ -12,7 +12,7 @@ export default function ServiceBlock({ icon, title, quote, features, isWide }) {
       <p className="text-slate-600 dark:text-slate-400 text-sm italic">
         "{quote}"
       </p>
-      <ul className="space-y-4 flex-grow">
+      <ul className="space-y-4 grow">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3">
             <span className="material-symbols-outlined text-primary text-xl">
