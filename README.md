@@ -1,3 +1,3 @@
 # Bespoke
 
-This is a development branch repository for bespoke digital
+This is a repository for bespoke digital
