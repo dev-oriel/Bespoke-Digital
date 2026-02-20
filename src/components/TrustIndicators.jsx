@@ -18,12 +18,12 @@ export default function TrustIndicators() {
   ];
 
   return (
-    <section className="border-y border-slate-200 dark:border-slate-800 py-12 bg-slate-50/50 dark:bg-slate-900/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="border-y border-slate-200 dark:border-slate-800 py-10 sm:py-12 bg-slate-50/50 dark:bg-slate-900/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {indicators.map((item, i) => (
             <div key={i} className="flex items-center gap-4">
-              <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <div className="size-10 sm:size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                 <span className="material-symbols-outlined">{item.icon}</span>
               </div>
               <div>
