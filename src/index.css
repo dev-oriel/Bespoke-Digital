@@ -4,6 +4,7 @@
   --color-primary: #3c83f6;
   --color-accent-amber: #f59e0b;
   --color-background-dark: #0f172a;
+  --color-background-light: #f5f7f8;
   
   --font-display: "Inter", sans-serif;
   
@@ -13,12 +14,26 @@
   --radius-full: 9999px;
 }
 
+/* Base resets to handle global background/text switching */
+@layer base {
+  body {
+    @apply bg-background-light text-slate-900 dark:bg-background-dark dark:text-slate-100 antialiased;
+  }
+}
+
 @utility glass-card {
-  /* High contrast background - No more muddy gray */
-  background: rgba(30, 41, 59, 0.7); 
+  /* LIGHT MODE: Clean, frosty white glass */
+  background: rgba(255, 255, 255, 0.7); 
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+
+  /* DARK MODE: Deep, high-contrast slate glass */
+  @variant dark {
+    background: rgba(30, 41, 59, 0.7); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
 }
 
 @utility glow-hover {
@@ -35,47 +50,14 @@
 }
 
 @utility grid-bg {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  /* LIGHT MODE: Subtle dark grid on light background */
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
-}@import "tailwindcss";
 
-@theme {
-  --color-primary: #3c83f6;
-  --color-accent-amber: #f59e0b;
-  --color-background-dark: #0f172a;
-  
-  --font-display: "Inter", sans-serif;
-  
-  --radius-default: 1rem;
-  --radius-lg: 2rem;
-  --radius-xl: 3rem;
-  --radius-full: 9999px;
-}
-
-@utility glass-card {
-  /* High contrast background - No more muddy gray */
-  background: rgba(50, 91, 209, 0.4); 
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-@utility glow-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    border-color: rgba(60, 131, 246, 0.6);
-    box-shadow: 0 0 25px rgba(60, 131, 246, 0.2);
-    transform: translateY(-5px);
+  /* DARK MODE: Subtle light grid on dark background */
+  @variant dark {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   }
-}
-
-@utility hero-glow {
-  background: radial-gradient(circle at center, rgba(60, 131, 246, 0.15) 0%, transparent 70%);
-}
-
-@utility grid-bg {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
 }
 
 @keyframes fadeIn {

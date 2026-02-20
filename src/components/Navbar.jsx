@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const navLinks = [
-    { name: "Work", path: "/" },
+    { name: "Work", path: "/portfolio" },
     { name: "Services", path: "/services" },
     { name: "Process", path: "/process" },
-    { name: "About", path: "#" },
+    { name: "About", path: "/about" },
+    { name: "FAQ", path: "/faq" },
+    { name: "Contact", path: "/contact" },
   ];
+  const location = useLocation();
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
@@ -17,27 +20,22 @@ export default function Navbar() {
               deployed_code
             </span>
           </div>
-          <span className="text-xl font-extrabold tracking-tight">
+          <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Bespoke<span className="text-primary">Digital</span>
           </span>
         </Link>
-
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className={`text-sm font-bold transition-colors ${location.pathname === link.path ? "text-primary" : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"}`}
             >
               {link.name}
             </Link>
           ))}
         </nav>
-
         <div className="flex items-center gap-4">
-          <button className="hidden sm:block text-sm font-semibold px-6 py-2 rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
-            Log In
-          </button>
           <Link
             to="/start"
             className="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-full shadow-[0_0_15px_rgba(60,131,246,0.3)] hover:scale-105 transition-all"

@@ -39,10 +39,10 @@ export default function Portfolio() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
       <div className="max-w-3xl mb-20">
-        <h1 className="text-6xl lg:text-8xl font-black mb-6 tracking-tight text-white">
+        <h1 className="text-6xl lg:text-8xl font-black mb-6 tracking-tight text-slate-900 dark:text-white">
           Our <span className="text-primary">Work.</span>
         </h1>
-        <p className="text-slate-300 text-xl leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-300 text-xl leading-relaxed">
           We don't just build websites. We engineer high-performance digital
           assets that solve complex business problems.
         </p>
@@ -52,10 +52,10 @@ export default function Portfolio() {
         {projects.map((p, i) => (
           <div
             key={i}
-            className="glass-card rounded-2xl overflow-hidden group border-white/5 hover:border-primary/50 transition-all duration-500"
+            className="glass-card rounded-2xl overflow-hidden group border-slate-200 dark:border-white/5 hover:border-primary/50 transition-all duration-500"
           >
             <div className="h-64 overflow-hidden relative">
-              <div className="absolute inset-0 bg-background-dark/20 group-hover:bg-transparent transition-all z-10"></div>
+              <div className="absolute inset-0 bg-slate-900/10 dark:bg-background-dark/20 group-hover:bg-transparent transition-all z-10"></div>
               <img
                 src={p.image}
                 alt={p.title}
@@ -68,7 +68,7 @@ export default function Portfolio() {
                   <span className="text-primary text-xs font-bold uppercase tracking-widest">
                     {p.category}
                   </span>
-                  <h3 className="text-2xl font-black text-white mt-1">
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mt-1">
                     {p.title}
                   </h3>
                 </div>
@@ -82,7 +82,7 @@ export default function Portfolio() {
                 {p.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-xs font-medium text-slate-400 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800"
+                    className="text-xs font-medium text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-900/80 px-3 py-1 rounded-md border border-slate-200 dark:border-slate-800"
                   >
                     {t}
                   </span>
@@ -94,7 +94,7 @@ export default function Portfolio() {
       </div>
 
       <div className="glass-card p-12 rounded-[2rem] text-center max-w-4xl mx-auto border-primary/20">
-        <h2 className="text-3xl font-black text-white mb-6">
+        <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-6">
           See your project here next.
         </h2>
         <Link
